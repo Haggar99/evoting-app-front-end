@@ -13,11 +13,11 @@ git clone https://github.com/Haggar99/evoting-app-front-end.git
 ```
 4.
 ```bash
-npm install
-```
-5.
-```bash
 cd evoting-app-front-end
+```
+6.
+```bash
+npm install
 ```
 6. `ionic`
 ```bash
