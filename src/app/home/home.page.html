@@ -1,0 +1,130 @@
+<!--
+<ion-header [translucent]="true">
+  <ion-toolbar class="toolbar-contaire" color="primary">
+    <ion-title class="ion-text-center">
+      Vote
+    </ion-title>
+  </ion-toolbar>
+</ion-header>-->
+
+<ion-content *ngIf="isLoading" class="ion-text-center">
+  <ion-spinner></ion-spinner>
+</ion-content>
+
+<ion-content [fullscreen]="true" *ngIf="!isLoading">
+<div class="toolbar-container" 
+style="
+height: 40vh; 
+background-color: rgb(54, 119, 240);
+box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+border-bottom-right-radius: 18px;
+border-bottom-left-radius: 18px;
+">
+  <div class="ion-text-center ion-padding">
+    <ion-label color="light">
+      <h2 style="font-weight: 500; font-size: 3rem;">Vote</h2>
+    </ion-label>
+  </div>
+  <div class="ion-padding">
+    <ion-label color="light">Bonjour {{user.name}}, </ion-label>
+    <ion-label color="light">
+      <h2>Directeur Technique</h2>
+      <small style="color: rgba(255, 255, 255, 0.623);">Derniere mise a jours 23. Sep 19:45</small>
+    </ion-label>
+  </div>
+  <ion-grid>
+    <ion-row >
+      <ion-col *ngFor="let candidat of candidats">
+          <ion-item lines="none" color="transparant">
+            <ion-avatar slot="start">
+              <ion-img src="../../assets/icon/Rectangle 14.png"></ion-img>
+            </ion-avatar>
+            <ion-label color="light">
+              <h2>{{candidat.firstName}}</h2>
+              <h1>{{candidat.nombreVote? candidat.nombreVote:  '0'}}</h1>
+            </ion-label>
+          </ion-item>
+      </ion-col>
+      <!-- <ion-col>
+          <ion-item lines="none" color="transparant">
+            <ion-avatar slot="end">
+              <ion-img src="../../assets/icon/Rectangle 13.png"></ion-img>
+            </ion-avatar>
+            <ion-label color="light">
+              <h2>Senoussi</h2>
+              <h1>123</h1>
+            </ion-label>
+          </ion-item>
+      </ion-col> -->
+    </ion-row>
+  </ion-grid>
+</div>
+<div class="ion-margin">
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+      <div class="ion-text-center">
+        <h1 
+        style="
+      font-weight: bolder;
+      background-color: rgb(24, 23, 23); 
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 7rem;
+      border-radius: 14px;
+      color: white;
+        ">25%</h1>
+      </div>
+      </ion-col>
+      <ion-col>
+      <div class="ion-text-center">
+        <h1 
+        style="
+      font-weight: bolder;
+      background-color: rgb(79, 105, 163);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 7rem;
+      border-radius: 14px;
+      color: white;
+        ">75%</h1>
+      </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>
+  <ion-list>
+    <ion-list-header>
+      Candidat
+    </ion-list-header>
+    <ion-item lines="none" *ngFor="let candidat of candidats">
+      <h1 style="
+      text-align: center;
+      margin: 0;
+      padding: 1rem;
+      background-color: #f5f7f9;
+      color: #018881;
+      border-radius: 50%;
+      font-weight: bold;">{{candidat.firstName | slice:0:1}}</h1>
+      <ion-label>
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+        <h2>{{candidat.firstName}}</h2>
+            </ion-col>
+            <ion-col><h1 
+              style="
+                font-weight: bold; 
+                margin: 0;
+                text-align: end;
+                color: green;
+                "> {{candidat.nombreVote? candidat.nombreVote:  '0'}} </h1></ion-col>
+          </ion-row>
+        </ion-grid>
+        <p>Listen, I've had a pretty messed up day...</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

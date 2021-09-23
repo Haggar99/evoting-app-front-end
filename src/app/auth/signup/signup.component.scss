@@ -1,0 +1,41 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  ion-content {
+    height: 100vh;
+    box-sizing: border-box;
+  }
+  
+  .nk {
+    font-size: 3.7rem;
+    color: var(--ion-color-secondary);
+    font-weight: 600;
+    text-align: center;
+  }
+  .nk span {
+    color: var(--ion-color-dark);
+  }
+  .container {
+    // height: 32vh;
+    display: grid;
+    justify-content: center;
+    align-items: flex-end;
+  }
+  .sub-title {
+    font-size: 2rem;
+    text-align: center;
+    color: rgb(129, 163, 184);
+  }
+  
+  .logo-neo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1rem;
+    padding-bottom: 0;
+  }
+  
+  ion-grid {
+    padding-top: 0;
+  }

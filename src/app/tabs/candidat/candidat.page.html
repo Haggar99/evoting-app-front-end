@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Les Candidats</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content *ngIf="isLoading" class="ion-text-center">
+  <ion-spinner></ion-spinner>
+</ion-content>
+
+<ion-content *ngIf="!isLoading">
+    <ion-list-header>
+      Cliquer pour voter
+    </ion-list-header>
+  <ion-list *ngFor="let candidat of candidats">
+    <ion-item lines="none" button (click)="voter(candidat._id)">
+      <h1 style="
+      text-align: center;
+      margin: 0;
+      padding: 1rem;
+      background-color: #f5f7f9;
+      color: #018881;
+      border-radius: 50%;
+      font-weight: bold;"> {{candidat.firstName | slice:0:1}} </h1>
+      <ion-label>
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+        <h2>{{candidat.firstName}}</h2>
+            </ion-col>
+            <ion-col><h1 
+              style="
+                font-weight: bold; 
+                margin: 0;
+                text-align: end;
+                color: green;
+                ">{{candidat.nombreVote? candidat.nombreVote:  '0'}}</h1></ion-col>
+          </ion-row>
+        </ion-grid>
+        <p>Listen, I've had a pretty messed up day...</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
