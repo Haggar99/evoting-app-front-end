@@ -9,7 +9,7 @@ npm install -g @ionic/cli
 
 3.
 ```bash
-git clone https://github.com/Haggar99/api-eVoting.git
+git clone https://github.com/Haggar99/evoting-app-front-end.git
 ```
 4.
 ```bash
@@ -17,7 +17,7 @@ npm install
 ```
 5.
 ```bash
-cd api-eVoting
+cd evoting-app-front-end
 ```
 6. `ionic`
 ```bash
